@@ -10,6 +10,17 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
  */
+
+@import "bootstrap";
+@import "jquery-ui";
+@import "normalize-rails";
+@import "owl.carousel.min";
+@import "owl.theme.default.min";
+@import "magnific-popup.min";
+@import "themify-icons";
+@import "jarallax";
+@import "template";
+@import "custom";
+@import "font-awesome-sprockets";
+@import "font-awesome";

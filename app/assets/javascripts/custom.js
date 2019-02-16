@@ -1,4 +1,3 @@
-
 $(function() {
 
   "use strict";
@@ -421,22 +420,22 @@ $(function() {
   /*===============================================
     Portfolio
   ===============================================*/
-  $(".portfolio-wrapper").imagesLoaded( function() {
-    var $portfolioWrapper = $(".portfolio-wrapper").isotope({
-      itemSelector: ".portfolio-item",
-      transitionDuration: 300 // 0.3 second
-    });
-    var filter = $(".filter ul li");
+  // $(".portfolio-wrapper").imagesLoaded( function() {
+  //   var $portfolioWrapper = $(".portfolio-wrapper").isotope({
+  //     itemSelector: ".portfolio-item",
+  //     transitionDuration: 300 // 0.3 second
+  //   });
+  //   var filter = $(".filter ul li");
 
-    // Portfolio Filter //
-    filter.on("click", function() {
-      var filterValue = $(this).attr("data-filter");
-      $portfolioWrapper.isotope({ filter: filterValue });
+  //   // Portfolio Filter //
+  //   filter.on("click", function() {
+  //     var filterValue = $(this).attr("data-filter");
+  //     $portfolioWrapper.isotope({ filter: filterValue });
 
-      filter.removeClass("active");
-      $(this).addClass("active");
-    });
-  });
+  //     filter.removeClass("active");
+  //     $(this).addClass("active");
+  //   });
+  // });
 
 
   /*===============================================
@@ -631,9 +630,9 @@ $(function() {
   /*===============================================
     Parallax
   ===============================================*/
-  $(".parallax").jarallax({
-    speed: 0.2
-  });
+  // $(".parallax").jarallax({
+  //   speed: 0.2
+  // });
 
 
   /*===============================================
@@ -704,23 +703,23 @@ $(function() {
   /*===============================================
     Fun Facts Counter
   ===============================================*/
-  $(".facts-wrapper").appear(function() {
+  // $(".facts-wrapper").appear(function() {
 
-    var fcounter = $(".facts-counter");
+  //   var fcounter = $(".facts-counter");
 
-    fcounter.each(function () {
-      $(this).prop("Counter",0).animate({
-          Counter: $(this).text()
-      }, {
-          duration: 3000,
-          easing: "swing",
-          step: function (now) {
-              $(this).text(Math.ceil(now));
-          }
-      });
-    });
+  //   fcounter.each(function () {
+  //     $(this).prop("Counter",0).animate({
+  //         Counter: $(this).text()
+  //     }, {
+  //         duration: 3000,
+  //         easing: "swing",
+  //         step: function (now) {
+  //             $(this).text(Math.ceil(now));
+  //         }
+  //     });
+  //   });
 
-  },{accX: 0, accY: -10});
+  // },{accX: 0, accY: -10});
 
 
   /*===============================================
@@ -786,13 +785,13 @@ $(function() {
   /*===============================================
     Popover
   ===============================================*/
-  $('[data-toggle="popover"]').popover();
+  // $('[data-toggle="popover"]').popover();
 
 
   /*===============================================
     Tooltip
   ===============================================*/
-  $('[data-toggle="tooltip"]').tooltip();
+  // $('[data-toggle="tooltip"]').tooltip();
 
 
   /*===============================================

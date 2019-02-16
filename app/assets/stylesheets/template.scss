@@ -8180,7 +8180,7 @@ button.mfp-close:hover {
   opacity: 1;
 }
 
-body:after {
+/*body:after {
   content: '';
   position: fixed;
   top: 0;
@@ -8189,7 +8189,7 @@ body:after {
   background: #fff;
   width: 100%;
   height: 100%;
-}
+}*/
 
 body.loaded:after {
   display: none;
@@ -8898,7 +8898,7 @@ body.loaded:after {
   background: rgba(0, 0, 0, 0.7);
   width: 100%;
   height: 100%;
-  cursor: url(../images/cursor.png), auto;
+  cursor: url(cursor.png), auto;
   -webkit-transition: ease-out 0.2s;
   transition: ease-out 0.2s;
 }
