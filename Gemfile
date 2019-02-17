@@ -68,4 +68,3 @@ gem 'jquery-rails'
 gem 'normalize-rails'
 # Font awesome
 gem 'font-awesome-sass', '~> 5.6.1'
-gem 'jquery-ui-rails'
