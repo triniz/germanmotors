@@ -1,2 +1,39 @@
-<h1>StaticPages#contact</h1>
-<p>Find me in app/views/static_pages/contact.html.erb</p>
+<!-- Google Maps section -->
+<div class="section">
+	<div class="container">
+		<div class="section-title text-center">
+			<h2>Besoin d'information ?</h2>
+			<p>N'hésitez pas à nous appeler ou à nous écrire, nous vous répondrons dans les plus brefs délais. </p>
+		</div>
+		<div id="map-canvas" class="gmap-md" data-latitude="36.400114" data-longitude="10.608675"></div>
+	</div><!-- end container -->
+</div>
+<!-- end Google Maps section -->
+
+<!-- Contact Info section -->
+<div class="section no-padding-top">
+	<div class="container">
+		<div class="row text-center">
+			<!-- Icon text box 1 -->
+			<div class="col-12 col-sm-6 col-md-4 icon-3xl">
+				<i class="ti ti-email text-dark margin-bottom-20"></i>
+				<h6 class="heading-uppercase no-margin">Email</h6>
+				<p>germanmotors80@yahoo.com</p>
+			</div>
+			<!-- Icon text box 2 -->
+			<div class="col-12 col-sm-6 col-md-4 icon-3xl">
+				<i class="ti ti-mobile text-dark margin-bottom-20"></i>
+				<h6 class="heading-uppercase no-margin">Phone</h6>
+				<p>+216 52 030 242</p>
+			</div>
+			<!-- Icon text box 3 -->
+			<div class="col-12 col-sm-6 col-md-4 icon-3xl">
+				<i class="ti ti-location-pin text-dark margin-bottom-20"></i>
+				<h6 class="heading-uppercase no-margin">Address</h6>
+				<p>Rue de la corniche, Hammamet 8050</p>
+			</div>
+		</div><!-- end row -->
+	</div><!-- end container -->
+</div>
+<!-- end Contact Info section -->
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["GOOGLE_MAPS_API_KEY"] %>&callback=initMap"></script>

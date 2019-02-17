@@ -23,6 +23,7 @@
 //= require imagesloaded.pkgd.min
 //= require isotope.pkgd.min
 //= require magnific-popup.min
+//= require gmaps.min
 //= require_tree .
 //= require jarallax.min
 //= require jarallax-video.min

@@ -1,0 +1,36 @@
+<footer>
+	<div class="footer bg-dark-lighter">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-12 col-md-3 text-center text-md-left order-md-1">
+					<%= link_to root_path, data: { turbolinks: false } do %>
+                		<h5 class="no-margin">German Motors</h5>
+            		<% end %>
+				</div>
+				<div class="col-12 col-md-3 text-center text-md-right order-md-3">
+					<ul class="list-horizontal-unstyled">
+						<li><a href="https://www.facebook.com/german.motors.Hammamet/"><i class="fab fa-facebook-f"></i></a></li>
+					</ul>
+				</div>
+				<div class="col-12 col-md-6 text-center order-md-2">
+					<ul class="list-horizontal-unstyled">
+						<li><h6 class="heading-uppercase no-margin">
+							<%= link_to "Accueil", root_path, data: { turbolinks: false }%>
+						</li>
+						<li><h6 class="heading-uppercase no-margin">
+							<%= link_to "Contact", static_pages_contact_path, data: { turbolinks: false }%>
+						</li>
+						<li><h6 class="heading-uppercase no-margin">
+							<%= link_to "Catalogue", static_pages_products_path, data: { turbolinks: false }%>
+						</li>
+					</ul>
+				</div>
+			</div><!-- end row -->
+		</div><!-- end container -->
+	</div><!-- end footer -->
+	<div class="footer-bottom bg-dark">
+		<div class="container text-center">
+			<p>&copy; 2019 German Motors, All Rights Reserved.</p>
+		</div><!-- end container -->
+	</div><!-- end footer-bottom -->
+</footer>
