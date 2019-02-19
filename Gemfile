@@ -68,6 +68,9 @@ gem 'jquery-rails'
 gem 'normalize-rails'
 # Font awesome
 gem 'font-awesome-sass', '~> 5.6.1'
+# Admin dashboard gem
+gem 'rails_admin', '~> 1.3'
+
 gem 'figaro'
 # Authntification
 gem 'devise'
