@@ -1,4 +1,5 @@
 class Compatibilite < ApplicationRecord
-  belongs_to :produit
-  belongs_to :modele
+	has_paper_trail
+  	belongs_to :produit
+  	belongs_to :modele
 end

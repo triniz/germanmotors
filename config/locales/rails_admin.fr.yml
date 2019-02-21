@@ -115,7 +115,7 @@ fr:
         menu: "Administration"
         breadcrumb: "Administration"
       index:
-        title: "Listing des %{model_label_plural}"
+        title: "Liste des %{model_label_plural}"
         menu: "Liste"
         breadcrumb: "%{model_label_plural}"
       show:

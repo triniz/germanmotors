@@ -78,6 +78,7 @@ gem 'devise'
 
 gem 'rails_admin', '~> 1.3'
 gem 'i18n'
+gem 'paper_trail'
 
 # Image upload
 gem 'carrierwave', '~> 1.0'
