@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: german-motors
+  api_key: '665426294339847'
+  api_secret: Tk_48mT8pqdmM5XxtMyOvAV9tic
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: german-motors
+  api_key: '665426294339847'
+  api_secret: Tk_48mT8pqdmM5XxtMyOvAV9tic
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: german-motors
+  api_key: '665426294339847'
+  api_secret: Tk_48mT8pqdmM5XxtMyOvAV9tic
+  enhance_image_tag: true
+  static_file_support: false

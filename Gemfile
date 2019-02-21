@@ -64,14 +64,21 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Bootstrap 
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
+
 # Normalize
 gem 'normalize-rails'
+
 # Font awesome
 gem 'font-awesome-sass', '~> 5.6.1'
 
 gem 'figaro'
+
 # Authentification
 gem 'devise'
 
 gem 'rails_admin', '~> 1.3'
 gem 'i18n'
+
+# Image upload
+gem 'carrierwave', '~> 1.0'
+gem 'cloudinary'
