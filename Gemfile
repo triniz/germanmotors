@@ -72,3 +72,4 @@ gem 'font-awesome-sass', '~> 5.6.1'
 gem 'figaro'
 # Authntification
 gem 'devise'
+gem 'rails_admin', '~> 1.3'
