@@ -6,6 +6,15 @@
 			<p>N'hésitez pas à nous appeler ou à nous écrire, nous vous répondrons dans les plus brefs délais. </p>
 		</div>
 		<div id="map-canvas" class="gmap-md" data-latitude="36.400114" data-longitude="10.608675"></div>
+		<script type="text/javascript">
+			function initMap() {
+			  var map = new google.maps.Map(document.getElementById('map-canvas'), {
+			    zoom: 4,
+			    center: {lat: 36.400114, lng: 10.608675},
+			    disableDefaultUI: true
+			  });
+			}
+		</script>
 	</div><!-- end container -->
 </div>
 <!-- end Google Maps section -->
