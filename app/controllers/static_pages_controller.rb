@@ -1,21 +1,26 @@
 class StaticPagesController < ApplicationController
-  def index
-  end
+    def index
+        @produits = Produit.all
+    end
 
-  def contact
-  end
+    def contact
+    end
 
-  def products
-  end
+    def products
+    end
 
-  def product
-  end
-  def login
-  end
-  def signup
-  end
-  def form
-  end
-  def dashboard
-  end
+    def product
+    end
+
+    def login
+    end
+
+    def signup
+    end
+
+    def form
+    end
+
+    def dashboard
+    end
 end

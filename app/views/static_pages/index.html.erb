@@ -51,6 +51,7 @@
 			<h3>Nouvel arrivage de moteurs</h3>
 		</div>
 		<div class="row product-wrapper">
+			<% @produits.each do |produit| %>    
 			<!-- Product box 1 -->
 			<div class="col-12 col-md-6 col-lg-4 product">
 				<div class="product-img">
@@ -66,15 +67,15 @@
 					</div>
 				</div><!-- end product-img -->
 				<div class="product-info">
-					<h6><a href="#">Moteur d’occasion M47D20 204D4 115CH</a></h6>
+					<h6><a href="#"><%= produit.titre %></a></h6>
 					<!-- Product Category -->
 					<ul class="list-horizontal">
-						<li><a href="#">BMW</a></li>
-						<li><a href="#">2.0 L / 115 ch</a></li>
+						<li><a href="#"><%= produit.titre %></a></li>
+						<li><a href="#"><%= produit.cylindre %> L / <%= produit.puissance %> ch</a></li>
 					</ul>
 					<!-- Product Price -->
 					<div class="product-price">
-						<h6>500TND</h6>
+						<h6><%= produit.prix %>TND</h6>
 					</div>
 					<!-- Add to Wishlist button -->
 					<!-- <a class="product-wishlist" href="#">
@@ -90,201 +91,7 @@
 					</div> -->
 				</div><!-- end product-info -->
 			</div>
-			<!-- Product box 2 -->
-			<div class="col-12 col-md-6 col-lg-4 product">
-				<div class="product-img">
-					<a href="#">
-						<%= image_tag("moteur.jpg") %>
-						<!-- Badge: Sale -->
-						<!-- <div class="product-sale">
-							<h6 class="heading-uppercase">-20%</h6>
-						</div> -->
-					</a>
-					<div class="product-img-hover">
-						<h6 class="heading-uppercase"><a href="#">Plus de détails</a></h6>
-					</div>
-				</div><!-- end product-img -->
-				<div class="product-info">
-					<h6><a href="#">Moteur d’occasion M47D20 204D4 115CH</a></h6>
-					<!-- Product Category -->
-					<ul class="list-horizontal">
-						<li><a href="#">BMW</a></li>
-						<li><a href="#">2.0 L / 115 ch</a></li>
-					</ul>
-					<!-- Product Price -->
-					<div class="product-price">
-						<h6>500TND</h6>
-					</div>
-					<!-- Add to Wishlist button -->
-					<!-- <a class="product-wishlist" href="#">
-						<i class="far fa-heart"></i>
-					</a> -->
-					<!-- Product Rating -->
-					<!-- <div class="product-rating">
-						<span><i class="fas fa-star"></i></span>
-						<span><i class="fas fa-star"></i></span>
-						<span><i class="fas fa-star"></i></span>
-						<span><i class="fas fa-star"></i></span>
-						<span><i class="fas fa-star"></i></span>
-					</div> -->
-				</div><!-- end product-info -->
-			</div>
-			<!-- Product box 3 -->
-			<div class="col-12 col-md-6 col-lg-4 product">
-				<div class="product-img">
-					<a href="#">
-						<%= image_tag("moteur.jpg") %>
-						<!-- Badge: Sale -->
-						<!-- <div class="product-sale">
-							<h6 class="heading-uppercase">-20%</h6>
-						</div> -->
-					</a>
-					<div class="product-img-hover">
-						<h6 class="heading-uppercase"><a href="#">Plus de détails</a></h6>
-					</div>
-				</div><!-- end product-img -->
-				<div class="product-info">
-					<h6><a href="#">Moteur d’occasion M47D20 204D4 115CH</a></h6>
-					<!-- Product Category -->
-					<ul class="list-horizontal">
-						<li><a href="#">BMW</a></li>
-						<li><a href="#">2.0 L / 115 ch</a></li>
-					</ul>
-					<!-- Product Price -->
-					<div class="product-price">
-						<h6>500TND</h6>
-					</div>
-					<!-- Add to Wishlist button -->
-					<!-- <a class="product-wishlist" href="#">
-						<i class="far fa-heart"></i>
-					</a> -->
-					<!-- Product Rating -->
-					<!-- <div class="product-rating">
-						<span><i class="fas fa-star"></i></span>
-						<span><i class="fas fa-star"></i></span>
-						<span><i class="fas fa-star"></i></span>
-						<span><i class="fas fa-star"></i></span>
-						<span><i class="fas fa-star"></i></span>
-					</div> -->
-				</div><!-- end product-info -->
-			</div>
-			<!-- Product box 4 -->
-			<div class="col-12 col-md-6 col-lg-4 product">
-				<div class="product-img">
-					<a href="#">
-						<%= image_tag("moteur.jpg") %>
-						<!-- Badge: Sale -->
-						<!-- <div class="product-sale">
-							<h6 class="heading-uppercase">-20%</h6>
-						</div> -->
-					</a>
-					<div class="product-img-hover">
-						<h6 class="heading-uppercase"><a href="#">Plus de détails</a></h6>
-					</div>
-				</div><!-- end product-img -->
-				<div class="product-info">
-					<h6><a href="#">Moteur d’occasion M47D20 204D4 115CH</a></h6>
-					<!-- Product Category -->
-					<ul class="list-horizontal">
-						<li><a href="#">BMW</a></li>
-						<li><a href="#">2.0 L / 115 ch</a></li>
-					</ul>
-					<!-- Product Price -->
-					<div class="product-price">
-						<h6>500TND</h6>
-					</div>
-					<!-- Add to Wishlist button -->
-					<!-- <a class="product-wishlist" href="#">
-						<i class="far fa-heart"></i>
-					</a> -->
-					<!-- Product Rating -->
-					<!-- <div class="product-rating">
-						<span><i class="fas fa-star"></i></span>
-						<span><i class="fas fa-star"></i></span>
-						<span><i class="fas fa-star"></i></span>
-						<span><i class="fas fa-star"></i></span>
-						<span><i class="fas fa-star"></i></span>
-					</div> -->
-				</div><!-- end product-info -->
-			</div>
-			<!-- Product box 5 -->
-			<div class="col-12 col-md-6 col-lg-4 product">
-				<div class="product-img">
-					<a href="#">
-						<%= image_tag("moteur.jpg") %>
-						<!-- Badge: Sale -->
-						<!-- <div class="product-sale">
-							<h6 class="heading-uppercase">-20%</h6>
-						</div> -->
-					</a>
-					<div class="product-img-hover">
-						<h6 class="heading-uppercase"><a href="#">Plus de détails</a></h6>
-					</div>
-				</div><!-- end product-img -->
-				<div class="product-info">
-					<h6><a href="#">Moteur d’occasion M47D20 204D4 115CH</a></h6>
-					<!-- Product Category -->
-					<ul class="list-horizontal">
-						<li><a href="#">BMW</a></li>
-						<li><a href="#">2.0 L / 115 ch</a></li>
-					</ul>
-					<!-- Product Price -->
-					<div class="product-price">
-						<h6>500TND</h6>
-					</div>
-					<!-- Add to Wishlist button -->
-					<!-- <a class="product-wishlist" href="#">
-						<i class="far fa-heart"></i>
-					</a> -->
-					<!-- Product Rating -->
-					<!-- <div class="product-rating">
-						<span><i class="fas fa-star"></i></span>
-						<span><i class="fas fa-star"></i></span>
-						<span><i class="fas fa-star"></i></span>
-						<span><i class="fas fa-star"></i></span>
-						<span><i class="fas fa-star"></i></span>
-					</div> -->
-				</div><!-- end product-info -->
-			</div>
-			<!-- Product box 6 -->
-			<div class="col-12 col-md-6 col-lg-4 product">
-				<div class="product-img">
-					<a href="#">
-						<%= image_tag("moteur.jpg") %>
-						<!-- Badge: Sale -->
-						<!-- <div class="product-sale">
-							<h6 class="heading-uppercase">-20%</h6>
-						</div> -->
-					</a>
-					<div class="product-img-hover">
-						<h6 class="heading-uppercase"><a href="#">Plus de détails</a></h6>
-					</div>
-				</div><!-- end product-img -->
-				<div class="product-info">
-					<h6><a href="#">Moteur d’occasion M47D20 204D4 115CH</a></h6>
-					<!-- Product Category -->
-					<ul class="list-horizontal">
-						<li><a href="#">BMW</a></li>
-						<li><a href="#">2.0 L / 115 ch</a></li>
-					</ul>
-					<!-- Product Price -->
-					<div class="product-price">
-						<h6>500TND</h6>
-					</div>
-					<!-- Add to Wishlist button -->
-					<!-- <a class="product-wishlist" href="#">
-						<i class="far fa-heart"></i>
-					</a> -->
-					<!-- Product Rating -->
-					<!-- <div class="product-rating">
-						<span><i class="fas fa-star"></i></span>
-						<span><i class="fas fa-star"></i></span>
-						<span><i class="fas fa-star"></i></span>
-						<span><i class="fas fa-star"></i></span>
-						<span><i class="fas fa-star"></i></span>
-					</div> -->
-				</div><!-- end product-info -->
-			</div>
+			<% end %>
 		</div><!-- end row -->
 	</div><!-- end container -->
 </div>

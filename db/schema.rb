@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_21_025051) do
+ActiveRecord::Schema.define(version: 2019_02_21_143516) do
+
+  create_table "compatibilites", force: :cascade do |t|
+    t.boolean "origine", default: true
+    t.integer "produit_id"
+    t.integer "modele_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["modele_id"], name: "index_compatibilites_on_modele_id"
+    t.index ["produit_id"], name: "index_compatibilites_on_produit_id"
+  end
 
   create_table "constructeurs", force: :cascade do |t|
     t.string "nom"

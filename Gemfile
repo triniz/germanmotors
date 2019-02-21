@@ -70,6 +70,8 @@ gem 'normalize-rails'
 gem 'font-awesome-sass', '~> 5.6.1'
 
 gem 'figaro'
-# Authntification
+# Authentification
 gem 'devise'
+
 gem 'rails_admin', '~> 1.3'
+gem 'i18n'
