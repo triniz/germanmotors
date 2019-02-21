@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Titre:</strong>
+  <%= @produit.titre %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @produit.description %>
+</p>
+
+<p>
+  <strong>Prix:</strong>
+  <%= @produit.prix %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @produit.type_produit %>
+</p>
+
+<p>
+  <strong>Etat:</strong>
+  <%= @produit.etat %>
+</p>
+
+<p>
+  <strong>Kilometrage:</strong>
+  <%= @produit.kilometrage %>
+</p>
+
+<p>
+  <strong>Cylindre:</strong>
+  <%= @produit.cylindre %>
+</p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @produit.code %>
+</p>
+
+<p>
+  <strong>Puissance:</strong>
+  <%= @produit.puissance %>
+</p>
+
+<%= link_to 'Edit', edit_produit_path(@produit) %> |
+<%= link_to 'Back', produits_path %>

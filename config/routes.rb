@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :modeles
+  resources :constructeurs
+  resources :produits
   resources :users
   get 'static_pages/index'
   get 'static_pages/contact'

@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  titre: MyString
+  description: MyText
+  prix: MyString
+  type: 
+  etat: MyString
+  kilometrage: MyString
+  cylindre: MyString
+  code: MyString
+  puissance: MyString
+
+two:
+  titre: MyString
+  description: MyText
+  prix: MyString
+  type: 
+  etat: MyString
+  kilometrage: MyString
+  cylindre: MyString
+  code: MyString
+  puissance: MyString
