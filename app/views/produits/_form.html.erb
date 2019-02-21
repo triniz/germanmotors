@@ -29,6 +29,12 @@
   <div class="field">
     <%= form.label :type %>
     <%= form.text_field :type_produit %>
+    <%= form.select(:type_produit, options_for_select([
+                            ['Moteur', 'Moteur'],
+                            ['Tableau de bord', 'Tableau de bord']], produit.type_produit),  
+                            {:prompt => 'Merci de sélectionner un type de produit'},
+                            {class: "form-control chosen-select"}) 
+                        %>
   </div>
 
   <div class="field">
