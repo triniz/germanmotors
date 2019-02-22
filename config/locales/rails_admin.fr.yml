@@ -1,4 +1,7 @@
 fr:
+  time:
+   formats:
+     long: "%Y-%m-%d %H:%M:%S"
   datetime:
     distance_in_words:
       half_a_minute: "30 secondes"
@@ -115,7 +118,7 @@ fr:
         menu: "Administration"
         breadcrumb: "Administration"
       index:
-        title: "Liste des %{model_label_plural}"
+        title: "Listing de la table %{model_label_plural}"
         menu: "Liste"
         breadcrumb: "%{model_label_plural}"
       show:
