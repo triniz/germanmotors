@@ -1,43 +1,88 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Produits</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Titre</th>
-      <th>Description</th>
-      <th>Prix</th>
-      <th>Type</th>
-      <th>Etat</th>
-      <th>Kilometrage</th>
-      <th>Cylindre</th>
-      <th>Code</th>
-      <th>Puissance</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @produits.each do |produit| %>
-      <tr>
-        <td><%= produit.titre %></td>
-        <td><%= produit.description %></td>
-        <td><%= produit.prix %></td>
-        <td><%= produit.type_produit %></td>
-        <td><%= produit.etat %></td>
-        <td><%= produit.kilometrage %></td>
-        <td><%= produit.cylindre %></td>
-        <td><%= produit.code %></td>
-        <td><%= produit.puissance %></td>
-        <td><%= link_to 'Show', produit %></td>
-        <td><%= link_to 'Edit', edit_produit_path(produit) %></td>
-        <td><%= link_to 'Destroy', produit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Produit', new_produit_path %>
+<!-- Products section -->
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <!-- Products -->
+      <div class="col-12 col-lg-9">
+        <div class="row align-items-center">
+          <div class="col-6">
+            <h6 class="heading-uppercase no-margin">Showing 1-9 out of 36</h6>
+          </div>
+          <!-- <div class="col-6 text-right">
+            <div>
+              <select class="custom-select">
+                <option selected>Sort by Newness</option>
+                <option value="1">Sort by Popularity</option>
+                <option value="1">Sort by Rating</option>
+                <option value="2">Sort by Price: high to low</option>
+                <option value="3">Sort by Price: low to high</option>
+              </select>
+            </div>
+          </div> -->
+        </div>
+        <div class="row product-wrapper margin-top-50">
+            <% @produits.each do |produit| %>
+                <!-- Product box -->
+                <div class="col-12 col-md-6 col-lg-4 product">
+                    <div class="product-img">
+                        <a href="#">
+                            <%= cl_image_tag(produit.image.url(:default)) %>
+                        </a>
+                        <div class="product-img-hover">
+                            <h6 class="heading-uppercase"><%=link_to "Plus de détails", produit_path(produit.id) %></h6>
+                        </div>
+                    </div><!-- end product-img -->
+                    <div class="product-info">
+                        <h6><a href="#"><%= produit.titre %></a></h6>
+                        <!-- Product Category -->
+                        <ul class="list-horizontal">
+                            <li><a href="#"><%= Constructeur.find(produit.compatibilites.where(origine: true).first.modele_id).nom %></a></li>
+                            <li><a href="#"><%= produit.cylindre %> L / <%= produit.puissance %> ch</a></li>
+                        </ul>
+                        <!-- Product Price -->
+                        <div class="product-price">
+                            <h6><%= produit.prix %>TND</h6>
+                        </div>
+                    </div><!-- end product-info -->
+                </div>      
+            <% end %>          
+        </div><!-- end row(inner) -->
+        <!-- Pagination -->
+        <nav>
+          <ul class="pagination justify-content-center margin-top-70">
+            <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
+            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
+          </ul>
+        </nav>
+      </div>
+      <!-- Sidebar -->
+      <div class="col-12 col-lg-3 shop-sidebar">
+        <!-- Sidebar box 1 - Category -->
+        <div class="shop-sidebar-box">
+          <h5 class="font-weight-light margin-bottom-20">Constructeur</h5>
+          <ul class="shop-sidebar-category">
+            <% @constructeurs.each do |constructeur| %>
+                <li><a href="#"><%= constructeur.nom %> <span><%= Compatibilite.where(modele_id: constructeur.modeles.ids).count %></span></a></li>
+            <% end %>
+          </ul>
+        </div>
+        <!-- Sidebar box 2 - Category -->
+        <div class="shop-sidebar-box">
+          <h5 class="font-weight-light margin-bottom-20">Pièces de rechange</h5>
+          <ul class="shop-sidebar-category">
+            <li><a href="#">Moteur <span><%= Produit.where(type_produit: "Moteur").count %></span></a></li>
+            <li><a href="#">Tableau de bord <span><%= Produit.where(type_produit: "Tableau de bord").count %></span></a></li>
+            <li><a href="#">Pare-brise <span><%= Produit.where(type_produit: "Pare-brise").count %></span></a></li>
+            <li><a href="#">Phares <span><%= Produit.where(type_produit: "Phares").count %></span></a></li>
+            <li><a href="#">Suspension <span><%= Produit.where(type_produit: "Suspension").count %></span></a></li>
+            <li><a href="#">kit d'embrayage<span><%= Produit.where(type_produit: "kit d'embrayage").count %></span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div><!-- end row -->
+  </div><!-- end container -->
+</div>
+<!-- end Products section -->

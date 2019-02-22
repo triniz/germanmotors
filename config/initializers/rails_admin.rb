@@ -18,7 +18,7 @@ RailsAdmin.config do |config|
   # config.audit_with :paper_trail, 'User', 'PaperTrail::Version' # PaperTrail >= 3.0.0
   config.audit_with :paper_trail, 'User', 'PaperTrail::Version' # PaperTrail >= 3.0.0
 
-  PAPER_TRAIL_AUDIT_MODEL = ['Produit', 'Constructeur','User','Compatibilite']
+  PAPER_TRAIL_AUDIT_MODEL = ['Produit', 'Constructeur','User','Compatibilite', 'Modele']
   config.actions do
     history_index do
       only PAPER_TRAIL_AUDIT_MODEL

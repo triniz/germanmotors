@@ -1,49 +1,100 @@
-<p id="notice"><%= notice %></p>
+<!-- Product Content -->
+<div class="section">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-12 col-lg-6 product-single">
+        <div class="product-single-img">
+          <div class="product-single-img-slider" data-owl-items="1" data-owl-nav="true">
+            <div data-hash="first">
+              <%= cl_image_tag(@produit.image.url(:default)) %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-6">
+        <h2 class="font-weight-normal line-height-120"><%= Constructeur.find(@produit.compatibilites.where(origine: true).first.modele_id).nom %> <%= Modele.find(@produit.compatibilites.where(origine: true).first.modele_id).nom %> <%= Modele.find(@produit.compatibilites.where(origine: true).first.modele_id).annee %></h2>
+        <ul class="list-horizontal-dash margin-bottom-10">
+          <li class="heading-uppercase text-dark"><%= @produit.type_produit %> <%= @produit.etat%></li>
+        </ul>
+        <!-- Progress bars -->
+        <div class="margin-top-30">
+          <div class="progress-box">
+                        <h6 class="font-weight-normal">Code moteur</h6>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 105%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                                <span><%= @produit.code %></span>
+                            </div>
+                        </div>
+                    </div>
+          <!-- 1 -->
+          <div class="progress-box">
+                        <h6 class="font-weight-normal">Cylindre</h6>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                                <span><%= @produit.cylindre %> L</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 2 -->
+          <div class="progress-box">
+                        <h6 class="font-weight-normal">Puissance</h6>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                                <span><%= @produit.puissance %> ch</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 3 -->
+          <div class="progress-box">
+                        <h6 class="font-weight-normal">Kilométrage</h6>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 105%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                                <span><%= @produit.kilometrage %></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-box">
+                        <h6 class="font-weight-normal">Compatibilité</h6>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 105%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                                <span>Consultez la liste</span>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+        <!-- end Progress bars -->
+      </div>
+    </div><!-- end row -->
+  </div><!-- end container -->
+</div>
+<!-- end Product Content -->
 
-<p>
-  <strong>Titre:</strong>
-  <%= @produit.titre %>
-</p>
+<!-- Product Tab content -->
+<div class="section no-padding-top">
+  <div class="container">
+    <div class="product-tab">
+<!--      <ul class="nav margin-bottom-20">
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" href="#tab-description"><h5 class="font-weight-light">Description</h5></a>
+        </li>
+      </ul> -->
+      <div class="tab-content">
+        <!-- Description tab content -->
+        <div class="tab-pane fade show active" id="tab-description">
+          <div class="margin-bottom-20">
+            <h6 class="heading-uppercase">Description:</h6>
+            <p><%= @produit.description %></p>
+          </div>
+          <div>
+            <h6 class="heading-uppercase">Compatibilité:</h6>
+            <% unless (@produit.compatibilites.where(origine: false).first == nil) %>
+                <p><%= Constructeur.find(Modele.find(@produit.compatibilites.where(origine: false).first.modele_id).constructeur_id).nom %> <%= Modele.find(@produit.compatibilites.where(origine: false).first.modele_id).nom %> <%= Modele.find(@produit.compatibilites.where(origine: false).first.modele_id).annee %></p>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><!-- end container -->
+</div>
+<!-- end Product Tab content -->
 
-<p>
-  <strong>Description:</strong>
-  <%= @produit.description %>
-</p>
-
-<p>
-  <strong>Prix:</strong>
-  <%= @produit.prix %>
-</p>
-
-<p>
-  <strong>Type:</strong>
-  <%= @produit.type_produit %>
-</p>
-
-<p>
-  <strong>Etat:</strong>
-  <%= @produit.etat %>
-</p>
-
-<p>
-  <strong>Kilometrage:</strong>
-  <%= @produit.kilometrage %>
-</p>
-
-<p>
-  <strong>Cylindre:</strong>
-  <%= @produit.cylindre %>
-</p>
-
-<p>
-  <strong>Code:</strong>
-  <%= @produit.code %>
-</p>
-
-<p>
-  <strong>Puissance:</strong>
-  <%= @produit.puissance %>
-</p>
-
-<%= link_to 'Edit', edit_produit_path(@produit) %> |
-<%= link_to 'Back', produits_path %>
