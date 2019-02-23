@@ -1,12 +1,20 @@
 class ProduitsController < ApplicationController
   before_action :set_produit, only: [:show, :edit, :update, :destroy]
 
-  # GET /produits
-  # GET /produits.json
-  def index
-    @constructeurs = Constructeur.all
-    @produits = Produit.all
-  end
+    # GET /produits
+    # GET /produits.json
+    def index
+        @constructeurs = Constructeur.all
+        search = params[:query].present? ? params[:query] : nil
+        @produits = if search
+            @all = Produit.search(search, fields: [:titre, :type_produit])
+            Produit.search(search, fields: [:titre, :type_produit], page: params[:page])
+        else
+            @all = Produit.all
+            Produit.all.page params[:page]
+        end
+        
+    end
 
   # GET /produits/1
   # GET /produits/1.json

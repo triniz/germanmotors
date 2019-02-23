@@ -76,6 +76,7 @@ gem 'figaro'
 # Authentification
 gem 'devise'
 
+# Protail d'administartion
 gem 'rails_admin', '~> 1.3'
 gem 'i18n'
 gem 'paper_trail'
@@ -83,3 +84,7 @@ gem 'paper_trail'
 # Image upload
 gem 'carrierwave', '~> 1.0'
 gem 'cloudinary'
+
+# Search feature
+gem 'searchkick'
+gem 'kaminari'
