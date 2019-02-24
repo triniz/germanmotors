@@ -5,6 +5,11 @@ class Produit < ApplicationRecord
 
 	after_commit :reindex_reachout
 
+	#Extract first_name and last_name from email field
+	after_validation :on => :create do |produit|
+  		produit.titre = produit.type_produit+" "+produit.etat.downcase+" "+produit.code+" / "+produit.cylindre+" L / "+produit.puissance+" ch"
+	end
+
 	def reindex_reachout
 		Produit.reindex
 	end

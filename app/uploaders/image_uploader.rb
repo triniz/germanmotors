@@ -4,7 +4,7 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   version :default do
     eager
-    cloudinary_transformation :height=>400, :width=>225, :crop=>"scale"
+    cloudinary_transformation :height=>400, :width=>252, :crop=>"scale"
   end
 
   def default_url(*args)

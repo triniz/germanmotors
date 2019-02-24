@@ -12,7 +12,9 @@
 			<div class="container text-center">
 				<!-- <h5 class="font-weight-light margin-bottom-20">New Arrivals For</h5> -->
 				<h1>Produits à des prix très compétitifs</h1>
-				<a class="button button-xl button-reveal-left-outline-white margin-top-20" href="#"><i class="ti-shopping-cart"></i><span>Catalogue</span></a>
+				<%= link_to produits_path, {class: "button button-xl button-reveal-left-outline-white margin-top-20", data: { turbolinks: false }}  do%>
+					    <i class="ti-shopping-cart"></i><span>Catalogue</span></a>
+				<% end %>
 			</div>
 		</div>
 	</div>
@@ -22,7 +24,9 @@
 			<div class="container text-center">
 <!-- 				<h5 class="font-weight-light margin-bottom-20">New Arrivals For</h5>
  -->				<h1>Une équipe de professionnels à votre service</h1>
-				<a class="button button-xl button-reveal-left-outline-white margin-top-20" href="#"><i class="ti-shopping-cart"></i><span>Catalogue</span></a>
+	 				<%= link_to produits_path, {class: "button button-xl button-reveal-left-outline-white margin-top-20", data: { turbolinks: false }} do%>
+					    <i class="ti-shopping-cart"></i><span>Catalogue</span></a>
+					<% end %>
 			</div>
 		</div>
 	</div>
@@ -40,16 +44,16 @@
 			<!-- Product box 1 -->
 			<div class="col-12 col-md-6 col-lg-3 product">
 				<div class="product-img">
-					<a href="#">
+					<%=link_to produit_path(produit.id) do %>
 						<%= cl_image_tag(produit.image.url(:default)) %>
 						<!-- Badge: Sale -->
 						<!-- <div class="product-sale">
 							<h6 class="heading-uppercase">-20%</h6>
 						</div> -->
-					</a>
+					<%end%>
 					<div class="product-img-hover">
-						<h6 class="heading-uppercase"><a href="#">Plus de détails</a></h6>
-					</div>
+                        <h6 class="heading-uppercase"><%=link_to "Plus de détails", produit_path(produit.id) %></h6>
+                    </div>
 				</div><!-- end product-img -->
 				<div class="product-info">
 					<h6><a href="#"><%= produit.titre %></a></h6>

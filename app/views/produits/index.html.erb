@@ -6,7 +6,7 @@
       <div class="col-12 col-lg-9">
         <div class="row align-items-center">
           <div class="col-6">
-            <h6 class="heading-uppercase no-margin">Affichage 1-<%= @produits.all.count %> sur <%= @all.all.count %></h6>
+            <h6 class="heading-uppercase no-margin">Affichage <%= @produits.current_page * 6 - 5 %>-<%= @all.count >  @produits.current_page * 6 ? @produits.current_page * 6 : @all.count %> sur <%= @all.count %></h6>
           </div>
           <!-- <div class="col-6 text-right">
             <div>
@@ -25,11 +25,11 @@
                 <!-- Product box -->
                 <div class="col-12 col-md-6 col-lg-4 product">
                     <div class="product-img">
-                        <a href="#">
+                        <%=link_to produit_path(produit.id), data: { turbolinks: false } do %>
                             <%= cl_image_tag(produit.image.url(:default)) %>
-                        </a>
+                        <% end %>
                         <div class="product-img-hover">
-                            <h6 class="heading-uppercase"><%=link_to "Plus de détails", produit_path(produit.id) %></h6>
+                            <h6 class="heading-uppercase"><%=link_to "Plus de détails", produit_path(produit.id, data: { turbolinks: false }) %></h6>
                         </div>
                     </div><!-- end product-img -->
                     <div class="product-info">
@@ -49,6 +49,7 @@
         </div><!-- end row(inner) -->
         <!-- Pagination -->
         <nav>
+          <%= @produits.current_page%>
           <div class="pagination justify-content-center margin-top-70">
             <%= paginate @produits %>
           </div>
@@ -61,7 +62,7 @@
           <h5 class="font-weight-light margin-bottom-20">Constructeur</h5>
           <ul class="shop-sidebar-category">
             <% @constructeurs.each do |constructeur| %>
-                <li><%= link_to produits_path(query: constructeur.nom) do %>
+                <li><%= link_to produits_path(query: constructeur.nom), data: { turbolinks: false } do %>
                         <%= constructeur.nom %>
                         <span><%= Produit.search(constructeur.nom,fields: [:titre]).total_count %></span>
                     <% end %>
@@ -73,32 +74,32 @@
         <div class="shop-sidebar-box">
           <h5 class="font-weight-light margin-bottom-20">Pièces de rechange</h5>
           <ul class="shop-sidebar-category">
-            <li><%= link_to produits_path(query: "Moteur") do %>
+            <li><%= link_to produits_path(query: "Moteur"), data: { turbolinks: false } do %>
                     Moteur
                     <span><%= Produit.where(type_produit: "Moteur").count %></span>
                 <% end %>
             </li>
-            <li><%= link_to produits_path(query: "Tableau de bord") do %>
+            <li><%= link_to produits_path(query: "Tableau de bord"), data: { turbolinks: false } do %>
                     Tableau de bord
                     <span><%= Produit.where(type_produit: "Tableau de bord").count %></span>
                 <% end %>
             </li>
-            <li><%= link_to produits_path(query: "Pare-brise") do %>
+            <li><%= link_to produits_path(query: "Pare-brise"), data: { turbolinks: false } do %>
                     Pare-brise
                     <span><%= Produit.where(type_produit: "Pare-brise").count %></span>
                 <% end %>
             </li>
-            <li><%= link_to produits_path(query: "Phares") do %>
+            <li><%= link_to produits_path(query: "Phares"), data: { turbolinks: false } do %>
                     Phares
                     <span><%= Produit.where(type_produit: "Phares").count %></span>
                 <% end %>
             </li>
-            <li><%= link_to produits_path(query: "Suspension") do %>
+            <li><%= link_to produits_path(query: "Suspension"), data: { turbolinks: false } do %>
                     Suspension
                     <span><%= Produit.where(type_produit: "Suspension").count %></span>
                 <% end %>
             </li>
-            <li><%= link_to produits_path(query: "kit d'embrayage") do %>
+            <li><%= link_to produits_path(query: "kit d'embrayage"), data: { turbolinks: false } do %>
                     kit d'embrayage
                     <span><%= Produit.where(type_produit: "kit d'embrayage").count %></span>
                 <% end %>

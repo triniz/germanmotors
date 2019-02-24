@@ -199,7 +199,7 @@ Produit.create!([
 		id: '6'
 	},
 	{
-		titre: 'Moteur d’occasion CZZ / Fiat / 3.0 L / 218 ch',
+		titre: 'Moteur d’occasion CZZ / Man / 3.0 L / 218 ch',
 		description: "Moteur d'occasion testé et garanti, vendu nu (culasse + bloc moteur). Demandez un devis détaillé pour obtenir le kilométrage et l’année du moteur.",
 		prix: "500",
 		etat: "Occasion",
@@ -210,6 +210,45 @@ Produit.create!([
 		type_produit: "Moteur",
 		image: 'http://res.cloudinary.com/german-motors/image/upload/v1550769840/cjna6eafqs52cc04mlr5.jpg',
 		id: '7'
+	},
+	{
+		titre: 'Moteur d’occasion CZZ / Nissan / 3.0 L / 218 ch',
+		description: "Moteur d'occasion testé et garanti, vendu nu (culasse + bloc moteur). Demandez un devis détaillé pour obtenir le kilométrage et l’année du moteur.",
+		prix: "500",
+		etat: "Occasion",
+		kilometrage: "20000",
+		cylindre: "3.0",
+		code: "CZZ",
+		puissance: "218",
+		type_produit: "Moteur",
+		image: 'http://res.cloudinary.com/german-motors/image/upload/v1550769840/cjna6eafqs52cc04mlr5.jpg',
+		id: '8'
+	},
+	{
+		titre: 'Moteur d’occasion CZZ / BMW / 3.0 L / 218 ch',
+		description: "Moteur d'occasion testé et garanti, vendu nu (culasse + bloc moteur). Demandez un devis détaillé pour obtenir le kilométrage et l’année du moteur.",
+		prix: "500",
+		etat: "Occasion",
+		kilometrage: "20000",
+		cylindre: "3.0",
+		code: "CZZ",
+		puissance: "218",
+		type_produit: "Moteur",
+		image: 'http://res.cloudinary.com/german-motors/image/upload/v1550769840/cjna6eafqs52cc04mlr5.jpg',
+		id: '9'
+	},
+	{
+		titre: 'Moteur d’occasion CZZ / Mercedes Benz / 3.0 L / 218 ch',
+		description: "Moteur d'occasion testé et garanti, vendu nu (culasse + bloc moteur). Demandez un devis détaillé pour obtenir le kilométrage et l’année du moteur.",
+		prix: "500",
+		etat: "Occasion",
+		kilometrage: "20000",
+		cylindre: "3.0",
+		code: "CZZ",
+		puissance: "218",
+		type_produit: "Moteur",
+		image: 'http://res.cloudinary.com/german-motors/image/upload/v1550769840/cjna6eafqs52cc04mlr5.jpg',
+		id: '10'
 	}
 ])
 
