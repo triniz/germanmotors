@@ -1,6 +1,6 @@
 class ConstructeursController < ApplicationController
   before_action :set_constructeur, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /constructeurs
   # GET /constructeurs.json
   def index

@@ -1,5 +1,7 @@
 class ModelesController < ApplicationController
   before_action :set_modele, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
+
 
   # GET /modeles
   # GET /modeles.json
