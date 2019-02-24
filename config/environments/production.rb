@@ -20,6 +20,7 @@ Rails.application.configure do
 
   #fix for application.css asset not found in production mode on Heroku
   config.serve_static_assets = true
+  config.assets.compile = true
 
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
