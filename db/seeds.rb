@@ -307,7 +307,24 @@ Compatibilite.create!([
 		modele_id: '1',
 		produit_id: '6',
 		origine: 'false'
+	},
+	{
+		modele_id: '7',
+		produit_id: '8',
+		origine: 'false'
+	},
+	{
+		modele_id: '2',
+		produit_id: '9',
+		origine: 'false'
+	},
+	{
+		modele_id: '1',
+		produit_id: '10',
+		origine: 'false'
 	}
+])		
+
 ])		
 
 
