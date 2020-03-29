@@ -23,7 +23,7 @@
 //= require imagesloaded.pkgd.min
 //= require isotope.pkgd.min
 //= require magnific-popup.min
-//= require gmaps.min
+//= require mapbox-gl
 //= require_tree .
 //= require jarallax.min
 //= require jarallax-video.min
@@ -31,6 +31,3 @@
 //= require masonry.pkgd.min
 //= require owl.carousel.min
 //= require custom
-
-
-		

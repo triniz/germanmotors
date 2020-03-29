@@ -5,16 +5,7 @@
 			<h2>Besoin d'information ?</h2>
 			<p>N'hésitez pas à nous appeler ou à nous écrire, nous vous répondrons dans les plus brefs délais. </p>
 		</div>
-		<div id="map-canvas" class="gmap-md" data-latitude="36.400114" data-longitude="10.608675"></div>
-		<script type="text/javascript">
-			function initMap() {
-			  var map = new google.maps.Map(document.getElementById('map-canvas'), {
-			    zoom: 4,
-			    center: {lat: 36.400114, lng: 10.608675},
-			    disableDefaultUI: true
-			  });
-			}
-		</script>
+		<div id="map" class="gmap gmap-md"></div>
 	</div><!-- end container -->
 </div>
 <!-- end Google Maps section -->
@@ -44,5 +35,25 @@
 		</div><!-- end row -->
 	</div><!-- end container -->
 </div>
-<!-- end Contact Info section -->
-<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["GOOGLE_MAPS_API_KEY"] %>&callback=initMap"></script>
+<!-- ***** JAVASCRIPTS ***** -->
+  <script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoibnRyaWtpIiwiYSI6ImNrN3J6cTZ4NDBpanIzZW91ZGk5emdzNXoifQ.WGWfa-jdOw5K5EjoyoikzQ';
+    mapboxgl.setRTLTextPlugin(
+      'https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-rtl-text/v0.2.3/mapbox-gl-rtl-text.js',
+      null,
+      true // Lazy load the plugin
+      );
+
+      var map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/mapbox/streets-v11',
+      center: [10.608675, 36.400114],
+      zoom: 14,
+      interactive: false
+      });
+      // disable map zoom when using scroll
+      map.scrollZoom.disable();
+      var marker = new mapboxgl.Marker()
+      .setLngLat([10.608675, 36.400114])
+      .addTo(map);
+  </script>
