@@ -9,13 +9,13 @@ class ProduitsController < ApplicationController
         @constructeurs = Constructeur.all
         search = params[:query].present? ? params[:query] : nil
         @produits = if search
-            @all = Produit.search(search, fields: [:titre, :type_produit])
-            Produit.search(search, fields: [:titre, :type_produit], page: params[:page])
+            @all = Produit.search(search)
+            Produit.search(search, page: params[:page], misspellings: {edit_distance: 2}, match: :word_start)
         else
             @all = Produit.all
             Produit.all.page params[:page]
         end
-        
+
     end
 
   # GET /produits/1

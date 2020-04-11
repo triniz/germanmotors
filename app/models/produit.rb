@@ -1,7 +1,7 @@
 class Produit < ApplicationRecord
 
 	#For search into Produit table
-	searchkick text_middle: [:titre, :type_produit]
+	searchkick 
 
 	after_commit :reindex_reachout
 

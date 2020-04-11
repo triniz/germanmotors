@@ -87,9 +87,10 @@
           </div>
           <div>
             <h6 class="heading-uppercase" id="compatibilite">Compatibilité:</h6>
-            <% unless (@produit.compatibilites.where(origine: false).first == nil) %>
-                <p><%= Constructeur.find(Modele.find(@produit.compatibilites.where(origine: false).first.modele_id).constructeur_id).nom %> <%= Modele.find(@produit.compatibilites.where(origine: false).first.modele_id).nom %> <%= Modele.find(@produit.compatibilites.where(origine: false).first.modele_id).annee %></p>
-            <% end %>
+            <% @compatibilites = @produit.compatibilites.where(origine: false)%>
+              <% @compatibilites.each do |compatibilite| %>
+                <p><%= Constructeur.find(Modele.find(compatibilite.modele_id).constructeur_id).nom %> <%= Modele.find(compatibilite.modele_id).nom %> <%= Modele.find(compatibilite.modele_id).annee %></p>
+              <% end %>
           </div>
         </div>
       </div>
