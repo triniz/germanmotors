@@ -12,7 +12,7 @@
         </div>
       </div>
       <div class="col-12 col-lg-6">
-        <h2 class="font-weight-normal line-height-120"><%= Constructeur.find(@produit.compatibilites.where(origine: true).first.modele_id).nom %> <%= Modele.find(@produit.compatibilites.where(origine: true).first.modele_id).nom %> <%= Modele.find(@produit.compatibilites.where(origine: true).first.modele_id).annee %></h2>
+        <h2 class="font-weight-normal line-height-120"><%=Constructeur.find(Modele.find(@produit.compatibilites.where(origine: true).first.modele_id).constructeur_id).nom %> <%= Modele.find(@produit.compatibilites.where(origine: true).first.modele_id).nom %> <%= Modele.find(@produit.compatibilites.where(origine: true).first.modele_id).annee %></h2>
         <ul class="list-horizontal-dash margin-bottom-10">
           <li class="heading-uppercase text-dark"><%= @produit.type_produit %> <%= @produit.etat%></li>
         </ul>
@@ -97,4 +97,3 @@
   </div><!-- end container -->
 </div>
 <!-- end Product Tab content -->
-
