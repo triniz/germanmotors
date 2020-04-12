@@ -33,7 +33,10 @@
                         </div>
                     </div><!-- end product-img -->
                     <div class="product-info">
-                        <h6><a href="#"><%= produit.titre %></a></h6>
+                        <h6><a href="#"><%= produit.type_produit %>&nbsp;<%= produit.etat %>&nbsp;<%= produit.code %></a></h6>
+                        <%if produit.cylindre.present? or produit.puissance.present? %>
+                            <h6><a href="#"><%= produit.cylindre %>&nbsp;<%= produit.puissance%></a></h6>
+                        <% end %>
                         <!-- Product Category -->
                         <ul class="list-horizontal">
                             <li><a href="#"><%=Constructeur.find(Modele.find(produit.compatibilites.where(origine: true).first.modele_id).constructeur_id).nom %></a></li>
