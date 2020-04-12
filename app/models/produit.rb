@@ -7,7 +7,7 @@ class Produit < ApplicationRecord
 
 	#Extract first_name and last_name from email field
 	after_validation :on => :create do |produit|
-  		produit.titre = produit.type_produit+" "+produit.etat.downcase+" "+produit.code+" / "+produit.cylindre+" L / "+produit.puissance+" ch"
+  		produit.titre = produit.type_produit+" "+produit.etat.downcase+" "+produit.code+" / "+produit.cylindre+" L / "+produit.puissance+" ch / "+Constructeur.find(Modele.find(produit.compatibilites.where(origine: true).first.modele_id).constructeur_id).nom
 	end
 
 	def search_data
