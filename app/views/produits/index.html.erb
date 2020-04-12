@@ -35,7 +35,7 @@
                     <div class="product-info">
                         <h6><a href="#"><%= produit.type_produit %>&nbsp;<%= produit.etat %>&nbsp;<%= produit.code %></a></h6>
                         <%if produit.cylindre.present? or produit.puissance.present? %>
-                            <h6><a href="#"><%= produit.cylindre %>&nbsp;<%= produit.puissance%></a></h6>
+                            <h6><a href="#"><%= produit.cylindre %>L/ &nbsp;<%= produit.puissance%>CH</a></h6>
                         <% end %>
                         <!-- Product Category -->
                         <ul class="list-horizontal">
@@ -51,7 +51,6 @@
         </div><!-- end row(inner) -->
         <!-- Pagination -->
         <nav>
-          <%= @produits.current_page%>
           <div class="pagination justify-content-center margin-top-70">
             <%= paginate @produits %>
           </div>
