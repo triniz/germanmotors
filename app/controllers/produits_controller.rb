@@ -10,7 +10,8 @@ class ProduitsController < ApplicationController
         search = params[:query].present? ? params[:query] : nil
         @produits = if search
             @all = Produit.search(search)
-            Produit.search(search, page: params[:page], misspellings: {edit_distance: 2}, match: :word_start)
+            # Produit.search(search, page: params[:page], misspellings: {edit_distance: 2}, match: :word_start, fields: [:titre, :description, :prix, :type_produit, :etat, :cylindre, :kilometrage, :code, :puissance])
+              Produit.search(search)
         else
             @all = Produit.all
             Produit.all.page params[:page]

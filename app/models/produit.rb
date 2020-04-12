@@ -1,7 +1,7 @@
 class Produit < ApplicationRecord
 
 	#For search into Produit table
-	searchkick 
+	searchkick word_middle: [:titre, :description, :prix, :type_produit, :etat, :cylindre, :kilometrage, :code, :puissance]
 
 	after_commit :reindex_reachout
 
@@ -10,16 +10,26 @@ class Produit < ApplicationRecord
   		produit.titre = produit.type_produit+" "+produit.etat.downcase+" "+produit.code+" / "+produit.cylindre+" L / "+produit.puissance+" ch"
 	end
 
+	def search_data
+		{
+			titre: titre,
+			description: description,
+			prix: prix,
+			type_produit: type_produit,
+			etat: etat,
+			cylindre: cylindre,
+			kilometrage: kilometrage,
+			code: code,
+			puissance: puissance
+		}
+
+	end
+
 	def reindex_reachout
 		Produit.reindex
 	end
 
 
-	def search_data
-	    {
-	      titre: titre,
-	    }
-  	end
 
   	paginates_per 6
 

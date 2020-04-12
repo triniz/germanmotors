@@ -36,16 +36,15 @@
                         <h6><a href="#"><%= produit.titre %></a></h6>
                         <!-- Product Category -->
                         <ul class="list-horizontal">
-                            <li><a href="#"><%= Constructeur.find(produit.compatibilites.where(origine: true).first.modele_id).nom %></a></li>
-                            <li><a href="#"><%= produit.cylindre %> L / <%= produit.puissance %> ch</a></li>
+                            <li><a href="#"><%=Constructeur.find(Modele.find(produit.compatibilites.where(origine: true).first.modele_id).constructeur_id).nom %></a></li>
                         </ul>
                         <!-- Product Price -->
                         <div class="product-price">
-                            <h6><%= produit.prix %>TND</h6>
+                            <h6><%= produit.prix %> TND</h6>
                         </div>
                     </div><!-- end product-info -->
-                </div>      
-            <% end %>          
+                </div>
+            <% end %>
         </div><!-- end row(inner) -->
         <!-- Pagination -->
         <nav>
