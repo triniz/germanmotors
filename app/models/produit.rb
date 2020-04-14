@@ -1,13 +1,14 @@
 class Produit < ApplicationRecord
 
 	#For search into Produit table
-	searchkick word_middle: [:titre, :description, :prix, :type_produit, :etat, :cylindre, :kilometrage, :code, :puissance]
+	searchkick word_middle: [:titre, :description, :type_produit, :etat, :code], word: [:prix, :kilometrage, :code, :puissance]
 
 	after_commit :reindex_reachout
 
 	#Extract first_name and last_name from email field
 	after_validation :on => :create do |produit|
-  		produit.titre = produit.type_produit+" "+produit.etat.downcase+" "+produit.code+" / "+produit.cylindre+" L / "+produit.puissance+" ch / "
+  		produit.titre = produit.type_produit+" "+produit.etat.downcase+" "+produit.code+" / "+produit.cylindre+" L / "+produit.puissance+" ch"
+	end
 
 	def search_data
 		{
